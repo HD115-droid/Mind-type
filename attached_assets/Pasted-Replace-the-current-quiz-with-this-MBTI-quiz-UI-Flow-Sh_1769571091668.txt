@@ -1,0 +1,78 @@
+Replace the current quiz with this MBTI quiz.
+
+UI/Flow:
+- Show 14 questions, one at a time (A/B buttons).
+- Store answers and update scores immediately.
+- At end, compute MBTI type and display type + axis totals.
+
+Scoring:
+Create counters: E,I,S,N,T,F,J,P = 0.
+For each question, if user picks A add +1 to the mapped letter; if B add +1 to the other mapped letter.
+
+Questions (in this exact order) + mapping:
+1) After a long, stressful week, what restores you faster?
+   A: Being around people / social  -> E
+   B: Alone/quiet time              -> I
+
+2) Which is more draining for you?
+   A: Long periods of solitude       -> E
+   B: Long periods of social interaction -> I
+
+3) “I notice what is.” vs “I notice what could be.”
+   A -> S
+   B -> N
+
+4) Story preference: what happened in order vs what it means/implies
+   A -> S
+   B -> N
+
+5) Decision priority: logical sense vs how it affects people
+   A -> T
+   B -> F
+
+6) In conflict: fix the problem vs fix emotional tension
+   A -> T
+   B -> F
+
+7) Feels better: having a plan vs keeping options open
+   A -> J
+   B -> P
+
+8) Unexpected changes: annoyed/stressed vs energized/curious
+   A -> J
+   B -> P
+
+9) Workspace: organized/intentional vs flexible/organized chaos
+   A -> J
+   B -> P
+
+10) Directions: specific landmarks/steps vs big-picture orientation
+   A -> S
+   B -> N
+
+11) Recall past: sensory details vs meaning/insight
+   A -> S
+   B -> N
+
+12) Someone upset: offer solution vs offer understanding
+   A -> T
+   B -> F
+
+13) Bothers you more: inconsistency vs disharmony
+   A -> T
+   B -> F
+
+14) Deadlines feel like: necessary structure vs external pressure
+   A -> J
+   B -> P
+
+Result calculation:
+- EI = (E >= I ? "E" : "I")
+- SN = (S >= N ? "S" : "N")
+- TF = (T >= F ? "T" : "F")
+- JP = (J >= P ? "J" : "P")
+- Type = EI + SN + TF + JP
+Show the type and the 4 axis tallies.
+
+Tie handling:
+If any axis is tied, display “weak preference” for that axis (still pick the left letter for type using >= as above).

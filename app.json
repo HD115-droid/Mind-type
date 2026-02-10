@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "MindType",
+    "slug": "mindtype",
+    "version": "1.0.0",
+    "icon": "./assets/images/icon.png",
+    "userInterfaceStyle": "dark",
+    "web": {
+      "output": "single",
+      "favicon": "./assets/images/icon.png"
+    },
+    "plugins": [
+      "expo-web-browser"
+    ],
+    "experiments": {
+      "reactCompiler": true
+    }
+  }
+}

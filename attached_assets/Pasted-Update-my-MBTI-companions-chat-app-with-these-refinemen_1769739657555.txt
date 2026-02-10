@@ -1,0 +1,25 @@
+Update my MBTI companions chat app with these refinements:
+
+1. Emojis in companion responses:
+   - In each of the 16 type's LLM/system prompt: allow up to 2 relevant emojis per message maximum.
+   - Emojis are optional — use them naturally/sparingly only when they fit the tone/personality (e.g. 😊 for warmth, 🤔 for reflection, 🔥 for drive/ambition).
+   - Never force them; keep text primary.
+
+2. Replace "mood" with "temperament":
+   - Change all UI labels/references from "mood" or "current mood" to "temperament" (e.g. "Temperament: Reserved" → "Warm" → "Close" as friendship grows).
+   - Keep the persistent/floating display in chat screen (fixed top bar/header): show current temperament + closeness/friendship level/progress bar at all times (never hides during typing, scrolling, or keyboard).
+
+3. Friendship level decay (like Snapchat streaks):
+   - Add passive decay: if user does NOT send a message to a companion for 24 hours (or longer), decrease the friendship/closeness level slightly (e.g. drop 1 tier or a small percentage daily).
+   - Decay only applies when no interaction occurs — chatting once per day (or more) maintains or increases level.
+   - Use app storage (DB/local/AsyncStorage) to track last_interaction_timestamp per companion.
+   - On app open or chat load: check time since last message → apply decay if >24h.
+   - Show warning if low/risk of drop (e.g. in companions list: "Haven't talked in 1 day – friendship may cool down soon").
+   - Update temperament label dynamically with level changes (reserved at low → warmer/close at high).
+
+4. Keep previous fixes intact:
+   - Persistent chat history across close/reopen.
+   - Intro message ("They don't know you yet... reserved at first") only on first-ever chat with that companion.
+   - Dark theme (#0F1117 bg, #ff073a accents), memory, backgrounds, temperaments.
+
+Apply efficiently: focus on emoji guidance in prompts, label change to "temperament", add timestamp-based decay logic + UI warnings, ensure floating temperament + closeness always visible in chat.
